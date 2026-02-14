@@ -1,0 +1,20 @@
+# Core API
+fastapi>=0.109.0
+uvicorn[standard]>=0.27.0
+pydantic>=2.11.5
+pydantic-settings>=2.1.0
+python-dotenv>=1.0.0
+aiofiles>=23.2.1
+
+# LLM & embeddings (openai<2 for langchain-openai compatibility)
+openai>=1.108.1,<2.0.0
+sentence-transformers>=2.6.1
+numpy>=1.26.0,<2.0.0
+
+# PyTorch & transformers (for cross-encoder reranker)
+torch>=2.0.0
+transformers>=4.30.0
+
+# HTTP & retries (tenacity<9 for langchain/langchain-core compatibility)
+httpx>=0.28.1
+tenacity>=8.5.0,<9.0.0
