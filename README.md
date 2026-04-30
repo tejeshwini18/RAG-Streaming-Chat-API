@@ -48,6 +48,30 @@ For **setup, API reference, RAG flow, configuration, and usage examples**, see:
 
 **[streaming_chat_api_with_RAG/README.md](streaming_chat_api_with_RAG/README.md)**
 
+
+## GitHub Actions Deployment
+
+This repo now includes:
+
+- `Dockerfile` for containerized runtime
+- `.github/workflows/deploy.yml` to build/push to GHCR on every push to `main`
+- Optional automatic deploy trigger to Render via webhook
+
+### Required GitHub Secrets
+
+Add these in **Settings → Secrets and variables → Actions**:
+
+- `RENDER_DEPLOY_HOOK_URL` (optional): Render deploy webhook URL. If omitted, workflow only builds/pushes image.
+
+### Image Output
+
+The workflow pushes:
+
+- `ghcr.io/<owner>/<repo>:latest`
+- `ghcr.io/<owner>/<repo>:sha-<commit>`
+
+Use one of these tags in your hosting platform.
+
 ## License
 
 MIT License
